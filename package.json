@@ -1,0 +1,25 @@
+{
+  "name": "unimar-plataforma-web",
+  "version": "1.0.0",
+  "description": "Proyecto base para Luis Azocar",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "cd backend && node index.js",
+    "client": "cd frontend && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/luis007vif/unimar-english-selftest.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/luis007vif/unimar-english-selftest/issues"
+  },
+  "homepage": "https://github.com/luis007vif/unimar-english-selftest#readme",
+  "dependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
