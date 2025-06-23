@@ -5,6 +5,10 @@ const adminRoutes = require("./adminRoutes");
 const usersRouter = require("./users");
 const grammarRouter = require("./grammar");
 const vocabularyRouter = require("./vocabulary");
+const readingPassagesRoutes = require("./readingPassages"); // <-- Lo agregamos aquí
+const readingQuestionsRoutes = require("./readingQuestions");
+const evaluationRoutes = require("./evaluation");
+
 require("dotenv").config();
 
 const app = express();
@@ -27,6 +31,14 @@ app.use("/api", grammarRouter);
 
 // Rutas de vocabulario
 app.use("/api", vocabularyRouter);
+
+// Rutas de Reading Passages 
+app.use("/api", readingPassagesRoutes);
+
+// Rutas de Reading Questions
+app.use("/api", readingQuestionsRoutes);
+
+app.use("/api", evaluationRoutes);
 
 // Ahora sí al final arrancamos el servidor:
 app.listen(PORT, () => {

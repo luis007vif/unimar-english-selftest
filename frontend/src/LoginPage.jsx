@@ -26,7 +26,7 @@ export default function LoginPage({ onLogin }) {
       if (form.email === "admin@unimar.edu.ve") {
         window.location.href = "/admin-panel";
       } else {
-        window.location.href = "/student-dashboard";
+        window.location.href = "/instructions";
       }
 
     } catch (err) {

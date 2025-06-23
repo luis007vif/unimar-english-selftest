@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-d
 import { jwtDecode } from 'jwt-decode';
 
 import LoginPage from "./LoginPage";
-import TestPage from "./TestPage";
 import AdminPanel from "./AdminPanel";
 import BancoPreguntas from "./BancoPreguntas";
 import UsuariosRegistrados from "./UsuariosRegistrados";
@@ -12,7 +11,8 @@ import GrammarQuestions from "./GrammarQuestions";
 import VocabularyQuestions from "./VocabularyQuestions";
 import ReadingPassages from "./ReadingPassages";
 import ReadingQuestions from "./ReadingQuestions";
-
+import Instructions from "./Instructions"; // <-- lo importamos
+import Evaluation from "./Evaluation";     // <-- importamos también la evaluación
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -43,14 +43,13 @@ function App() {
               role === "admin" ? (
                 <Navigate to="/admin-panel" />
               ) : (
-                <Navigate to="/student-dashboard" />
+                <Navigate to="/instructions" />  // <-- Aquí el cambio importante
               )
             ) : (
               <LoginPage onLogin={() => setLoggedIn(true)} />
             )
           }
         />
-        <Route path="/student-dashboard" element={<TestPage />} />
 
         {/* Rutas del administrador */}
         <Route path="/admin-panel" element={<AdminPanel />} />
@@ -62,6 +61,9 @@ function App() {
         <Route path="/admin/preguntas/reading-passages" element={<ReadingPassages />} />
         <Route path="/admin/preguntas/reading-questions" element={<ReadingQuestions />} />
 
+        {/* Rutas del estudiante */}
+        <Route path="/instructions" element={<Instructions />} />
+        <Route path="/evaluation" element={<Evaluation />} />
       </Routes>
     </Router>
   );

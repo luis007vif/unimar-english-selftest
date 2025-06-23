@@ -1,4 +1,9 @@
-export default function Instructions({ onStart }) {
+import React from "react";
+import { useNavigate } from "react-router-dom";
+
+export default function Instructions() {
+  const navigate = useNavigate();
+
   return (
     <div className="min-h-screen flex items-center justify-center bg-blue-50">
       <div className="bg-white p-8 rounded-2xl shadow-md max-w-lg text-center space-y-6">
@@ -8,7 +13,7 @@ export default function Instructions({ onStart }) {
         </p>
         <p className="text-gray-600">Duración estimada: 10 minutos</p>
         <button
-          onClick={onStart}
+          onClick={() => navigate("/evaluation")}
           className="bg-blue-900 text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition"
         >
           Comenzar prueba
