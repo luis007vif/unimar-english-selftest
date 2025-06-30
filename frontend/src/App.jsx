@@ -11,8 +11,12 @@ import GrammarQuestions from "./GrammarQuestions";
 import VocabularyQuestions from "./VocabularyQuestions";
 import ReadingPassages from "./ReadingPassages";
 import ReadingQuestions from "./ReadingQuestions";
-import Instructions from "./Instructions"; // <-- lo importamos
-import Evaluation from "./Evaluation";     // <-- importamos también la evaluación
+import Instructions from "./Instructions"; 
+import Evaluation from "./Evaluation";    
+import SelfTest from "./SelfTest";
+import StudentDashboard from "./StudentDashboard";
+import StudentAttempts from "./StudentAttempts";
+import StudentAttemptDetail from "./StudentAttemptDetail";
 
 function App() {
   const [loggedIn, setLoggedIn] = useState(false);
@@ -64,6 +68,10 @@ function App() {
         {/* Rutas del estudiante */}
         <Route path="/instructions" element={<Instructions />} />
         <Route path="/evaluation" element={<Evaluation />} />
+        <Route path="/selftest" element={<SelfTest />} />
+        <Route path="/student-dashboard" element={<StudentDashboard />} />
+        <Route path="/student-attempts" element={<StudentAttempts />} />
+        <Route path="/student-attempts/:attemptId" element={<StudentAttemptDetail />} />
       </Routes>
     </Router>
   );

@@ -11,9 +11,9 @@ export default function Instructions() {
         <p className="text-gray-700">
           Esta prueba evalúa tu nivel de <strong>gramática</strong>, <strong>vocabulario técnico</strong> y <strong>comprensión lectora</strong>.
         </p>
-        <p className="text-gray-600">Duración estimada: 10 minutos</p>
+        <p className="text-gray-600">Duración estimada: 20 minutos</p>
         <button
-          onClick={() => navigate("/evaluation")}
+          onClick={() => navigate("/selftest")}
           className="bg-blue-900 text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition"
         >
           Comenzar prueba

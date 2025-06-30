@@ -8,6 +8,9 @@ const vocabularyRouter = require("./vocabulary");
 const readingPassagesRoutes = require("./readingPassages"); // <-- Lo agregamos aquí
 const readingQuestionsRoutes = require("./readingQuestions");
 const evaluationRoutes = require("./evaluation");
+const fullTestRouter = require("./fullTest");
+const testAttemptsRoutes = require("./testAttempts");
+const testAttemptAnswersRoutes = require("./testAttemptAnswers");
 
 require("dotenv").config();
 
@@ -22,6 +25,8 @@ app.use("/api", authRoutes);
 
 // Rutas protegidas de administración
 app.use("/", adminRoutes);
+app.use("/api", testAttemptsRoutes);
+app.use("/api", testAttemptAnswersRoutes);
 
 // Rutas de usuarios
 app.use("/api", usersRouter);
@@ -39,6 +44,8 @@ app.use("/api", readingPassagesRoutes);
 app.use("/api", readingQuestionsRoutes);
 
 app.use("/api", evaluationRoutes);
+
+app.use("/api", fullTestRouter);
 
 // Ahora sí al final arrancamos el servidor:
 app.listen(PORT, () => {
