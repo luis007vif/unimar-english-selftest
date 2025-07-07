@@ -27,12 +27,12 @@ router.get("/grammar-questions", verifyToken, async (req, res) => {
 // Crear nueva pregunta de gramática
 router.post("/grammar-questions", verifyToken, async (req, res) => {
   try {
-    const { question_text, option_a, option_b, option_c, option_d, correct_option } = req.body;
+    const { question, option_a, option_b, option_c, option_d, correct_option } = req.body;
 
     await db.query(
       `INSERT INTO grammar_questions (question, option_a, option_b, option_c, option_d, correct_option)
       VALUES ($1, $2, $3, $4, $5, $6)`,
-      [question_text, option_a, option_b, option_c, option_d, correct_option]
+      [question, option_a, option_b, option_c, option_d, correct_option]
     );
 
     res.json({ message: "Pregunta de gramática creada correctamente" });

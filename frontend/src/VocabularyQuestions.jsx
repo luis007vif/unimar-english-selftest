@@ -94,8 +94,10 @@ export default function VocabularyQuestions() {
           <input className="border p-2 w-full mb-2" placeholder="Opción B" value={optionB} onChange={(e) => setOptionB(e.target.value)} />
           <input className="border p-2 w-full mb-2" placeholder="Opción C" value={optionC} onChange={(e) => setOptionC(e.target.value)} />
           <input className="border p-2 w-full mb-4" placeholder="Opción D" value={optionD} onChange={(e) => setOptionD(e.target.value)} />
-          <button className="bg-blue-900 text-white px-4 py-2 rounded" onClick={handleCreate}>Guardar pregunta</button>
-        </div>
+          <button className="bg-blue-900 text-white w-full py-2 rounded hover:bg-blue-800 transition" onClick={handleCreate}>
+            Guardar pregunta
+          </button>
+        </div> {/* <- este div faltaba cerrarse */}
 
         <table className="w-full border border-gray-300">
           <thead>

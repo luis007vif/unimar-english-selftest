@@ -11,6 +11,7 @@ const evaluationRoutes = require("./evaluation");
 const fullTestRouter = require("./fullTest");
 const testAttemptsRoutes = require("./testAttempts");
 const testAttemptAnswersRoutes = require("./testAttemptAnswers");
+const adminStatsRoutes = require("./adminStats");  // <-- Importa la nueva ruta
 
 require("dotenv").config();
 
@@ -27,6 +28,7 @@ app.use("/api", authRoutes);
 app.use("/", adminRoutes);
 app.use("/api", testAttemptsRoutes);
 app.use("/api", testAttemptAnswersRoutes);
+app.use("/api", adminStatsRoutes);  // <-- Añade la ruta aquí
 
 // Rutas de usuarios
 app.use("/api", usersRouter);

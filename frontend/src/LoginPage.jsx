@@ -22,7 +22,6 @@ export default function LoginPage({ onLogin }) {
       const res = await axios.post(`http://localhost:3001/api/${url}`, body);
       localStorage.setItem("token", res.data.token);
 
-      // Redirigir según el tipo de usuario
       if (form.email === "admin@unimar.edu.ve") {
         window.location.href = "/admin-panel";
       } else {
@@ -40,6 +39,11 @@ export default function LoginPage({ onLogin }) {
         onSubmit={handleSubmit}
         className="bg-white p-6 rounded-xl shadow-md w-full max-w-sm space-y-4"
       >
+        {/* Logo visible en login y registro */}
+        <div className="flex justify-center mb-4">
+          <img src="/unnamed.png" alt="Logo UNIMAR" className="h-20 w-20 rounded-full" />
+        </div>
+
         <h2 className="text-2xl font-bold text-center text-blue-900">
           {isLogin ? "Iniciar Sesión" : "Registrarse"}
         </h2>

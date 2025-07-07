@@ -14,9 +14,16 @@ export default function Instructions() {
         <p className="text-gray-600">Duración estimada: 20 minutos</p>
         <button
           onClick={() => navigate("/selftest")}
-          className="bg-blue-900 text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition"
+          className="bg-blue-900 text-white px-6 py-3 rounded-xl hover:bg-blue-800 transition mb-2"
         >
           Comenzar prueba
+        </button>
+        <br />
+        <button
+          onClick={() => navigate("/student-dashboard")}
+          className="bg-blue-600 text-white px-6 py-3 rounded-xl hover:bg-blue-500 transition"
+        >
+          Volver al Panel
         </button>
       </div>
     </div>
